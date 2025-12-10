@@ -9,7 +9,7 @@ Repository Kelas Alpro A untuk pengumpulan source code Tugas Besar Mata Kuliah A
 
 ## 📂 Struktur Folder
 ```
-ALPRO-TubesSMT1-2025/
+ALPRO_A-TubesSMT1-2025/
 │
 ├── submissions/
 │   ├── 11251001_NamaLengkap_JudulTubes.py
@@ -43,7 +43,7 @@ NIM_NamaLengkap_JudulTubes.py
 ## ❗ Cara Upload Source Code
 
 ### 1. Via GitHub Web (Recommended)
-1. Buka repository ini: `https://github.com/desyadelina/ALPRO-TubesSMT1-2025`
+1. Buka repository ini: `https://github.com/desyadelina/ALPRO_A-TubesSMT1-2025`
 2. Masuk ke folder `submissions/`
 3. Klik tombol **"Add file"** → **"Upload files"**
 4. Drag & drop file `.py` kamu atau klik **"choose your files"**
