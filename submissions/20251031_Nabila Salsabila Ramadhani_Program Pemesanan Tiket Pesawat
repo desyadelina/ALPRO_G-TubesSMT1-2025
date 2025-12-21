@@ -1,0 +1,372 @@
+# # =====================================
+# #   Aplikasi Pemesanan Tiket Pesawat
+# # =====================================
+
+# # List 5 tujuan dengan harga & tanggal (user tinggal pilih)
+# opsi_tiket = [
+#     ["Jakarta",   750000,  "12-12-2025"],
+#     ["Bali",     1200000,  "15-12-2025"],
+#     ["Surabaya",  680000,  "20-12-2025"],
+#     ["Singapore", 2300000, "18-12-2025"],
+#     ["Tokyo",    5500000,  "25-12-2025"]
+# ]
+
+
+# def create(data):
+#     print("\n=== Tambah Pemesanan Tiket ===")
+#     nama = input("Nama Penumpang : ")
+
+#     print("\nPilih Tujuan:")
+#     for i, o in enumerate(opsi_tiket):
+#         print(f"{i+1}. {o[0]} - Rp{o[1]} - {o[2]}")
+
+#     try:
+#         pilih = int(input("Masukkan pilihan [1-5]: ")) - 1
+#         if pilih < 0 or pilih >= len(opsi_tiket):
+#             print("Pilihan tidak valid!\n")
+#             return data
+
+#         tujuan = opsi_tiket[pilih][0]
+#         harga = opsi_tiket[pilih][1]
+#         tanggal = opsi_tiket[pilih][2]
+
+#         data.append([nama, tujuan, harga, tanggal])
+#         print(">> Pemesanan berhasil ditambahkan!\n")
+
+#     except ValueError:
+#         print("Input harus angka!\n")
+
+#     return data
+
+
+# def read(data):
+#     print("\n=== Daftar Pemesanan Tiket ===")
+#     if not data:
+#         print("Belum ada data.\n")
+#         return
+
+#     for i, d in enumerate(data):
+#         print(f"{i+1}. {d[0]} - {d[1]} - Rp{d[2]} - {d[3]}")
+#     print()
+
+
+# def update(data):
+#     print("\n=== Edit Pemesanan Tiket ===")
+#     read(data)
+
+#     if not data:
+#         return data
+
+#     try:
+#         idx = int(input("Pilih nomor yang ingin diedit: ")) - 1
+#         if idx < 0 or idx >= len(data):
+#             print("Nomor tidak valid!\n")
+#             return data
+
+#         nama_baru = input("Nama baru: ")
+#         data[idx][0] = nama_baru
+
+#         print("\nPilih Tujuan Baru:")
+#         for i, o in enumerate(opsi_tiket):
+#             print(f"{i+1}. {o[0]} - Rp{o[1]} - {o[2]}")
+
+#         pilih = int(input("Masukkan pilihan [1-5]: ")) - 1
+#         if pilih < 0 or pilih >= len(opsi_tiket):
+#             print("Pilihan tidak valid!\n")
+#             return data
+
+#         data[idx][1] = opsi_tiket[pilih][0]
+#         data[idx][2] = opsi_tiket[pilih][1]
+#         data[idx][3] = opsi_tiket[pilih][2]
+
+#         print(">> Data berhasil diupdate!\n")
+
+#     except ValueError:
+#         print("Input harus angka!\n")
+
+#     return data
+
+
+# def delete(data):
+#     print("\n=== Hapus Pemesanan Tiket ===")
+#     read(data)
+
+#     if not data:
+#         return data
+
+#     try:
+#         idx = int(input("Pilih nomor yang ingin dihapus: ")) - 1
+#         if idx < 0 or idx >= len(data):
+#             print("Nomor tidak valid!\n")
+#             return data
+
+#         data.pop(idx)
+#         print(">> Data berhasil dihapus!\n")
+
+#     except ValueError:
+#         print("Input harus angka!\n")
+
+#     return data
+
+
+# def menu():
+#     print("=== Aplikasi Pemesanan Tiket Pesawat ===")
+#     print("1. Tambah Pemesanan")
+#     print("2. Lihat Pemesanan")
+#     print("3. Edit Pemesanan")
+#     print("4. Hapus Pemesanan")
+#     print("5. Keluar")
+
+#     try:
+#         pilih = int(input("Masukkan pilihan [1-5]: "))
+#         return pilih
+#     except:
+#         return 0
+
+
+# # =====================================
+# # Program Utama
+# # =====================================
+
+# data = []
+# pilihan = 0
+
+# while pilihan != 5:
+#     pilihan = menu()
+
+#     if pilihan == 1:
+#         create(data)
+#         input("ENTER untuk lanjut...")
+#     elif pilihan == 2:
+#         read(data)
+#         input("ENTER untuk lanjut...")
+#     elif pilihan == 3:
+#         update(data)
+#         input("ENTER untuk lanjut...")
+#     elif pilihan == 4:
+#         delete(data)
+#         input("ENTER untuk lanjut...")
+#     elif pilihan == 5:
+#         print("Terima kasih!\n")
+#     else:
+#         print("Pilihan tidak valid!\n")
+
+
+
+# =====================================
+#   Aplikasi Pemesanan Tiket Pesawat
+# =====================================
+
+# List 5 tujuan dengan harga & tanggal (user tinggal pilih)
+opsi_tiket = [
+    ["Jakarta",   750000,  "12-12-2025"],
+    ["Bali",     1200000,  "15-12-2025"],
+    ["Surabaya",  680000,  "20-12-2025"],
+    ["Singapore", 2300000, "18-12-2025"],
+    ["Tokyo",    5500000,  "25-12-2025"]
+]
+
+
+def create(data):
+    print("\n=== Tambah Pemesanan Tiket ===")
+    nama = input("Nama Penumpang : ")
+
+    print("\nPilih Tujuan:")
+    for i, o in enumerate(opsi_tiket):
+        print(f"{i+1}. {o[0]} - Rp{o[1]} - {o[2]}")
+
+    try:
+        pilih = int(input("Masukkan pilihan [1-5]: ")) - 1
+        if pilih < 0 or pilih >= len(opsi_tiket):
+            print("Pilihan tidak valid!\n")
+            return data
+
+        tujuan = opsi_tiket[pilih][0]
+        harga = opsi_tiket[pilih][1]
+        tanggal = opsi_tiket[pilih][2]
+
+        data.append([nama, tujuan, harga, tanggal])
+        print(">> Pemesanan berhasil ditambahkan!\n")
+
+    except ValueError:
+        print("Input harus angka!\n")
+
+    return data
+
+
+def read(data):
+    print("\n=== Daftar Pemesanan Tiket ===")
+    if not data:
+        print("Belum ada data.\n")
+        return
+
+    for i, d in enumerate(data):
+        print(f"{i+1}. {d[0]} - {d[1]} - Rp{d[2]} - {d[3]}")
+    print()
+
+
+def update(data):
+    print("\n=== Edit Pemesanan Tiket ===")
+    read(data)
+
+    if not data:
+        return data
+
+    try:
+        idx = int(input("Pilih nomor yang ingin diedit: ")) - 1
+        if idx < 0 or idx >= len(data):
+            print("Nomor tidak valid!\n")
+            return data
+
+        nama_baru = input("Nama baru: ")
+        data[idx][0] = nama_baru
+
+        print("\nPilih Tujuan Baru:")
+        for i, o in enumerate(opsi_tiket):
+            print(f"{i+1}. {o[0]} - Rp{o[1]} - {o[2]}")
+
+        pilih = int(input("Masukkan pilihan [1-5]: ")) - 1
+        if pilih < 0 or pilih >= 5:
+            print("Pilihan tidak valid!\n")
+            return data
+
+        data[idx][1] = opsi_tiket[pilih][0]
+        data[idx][2] = opsi_tiket[pilih][1]
+        data[idx][3] = opsi_tiket[pilih][2]
+
+        print(">> Data berhasil diupdate!\n")
+
+    except ValueError:
+        print("Input harus angka!\n")
+
+    return data
+
+
+def delete(data):
+    print("\n=== Hapus Pemesanan Tiket ===")
+    read(data)
+
+    if not data:
+        return data
+
+    try:
+        idx = int(input("Pilih nomor yang ingin dihapus: ")) - 1
+        if idx < 0 or idx >= len(data):
+            print("Nomor tidak valid!\n")
+            return data
+
+        data.pop(idx)
+        print(">> Data berhasil dihapus!\n")
+
+    except ValueError:
+        print("Input harus angka!\n")
+
+    return data
+
+
+# =====================================
+#     PENCARIAN GABUNGAN (Nama/Tujuan)
+# =====================================
+
+def search(data):
+    print("\n=== Cari Berdasarkan Nama ATAU Tujuan ===")
+    key = input("Masukkan kata kunci: ").lower()
+
+    found = False
+    for d in data:
+        if key in d[0].lower() or key in d[1].lower():
+            print(f"Ditemukan: {d[0]} - {d[1]} - Rp{d[2]} - {d[3]}")
+            found = True
+
+    if not found:
+        print(">> Data tidak ditemukan.\n")
+
+
+# =====================================
+#              SORTING
+# ====================================
+
+def sortData(data):
+    if not data:
+        print("\nBelum ada data untuk diurutkan.\n")
+        return
+
+    print("\n=== Urutkan Data ===")
+    print("1. Berdasarkan Nama (A-Z)")
+    print("2. Berdasarkan Tujuan (A-Z)")
+    print("3. Berdasarkan Harga (Termurah)")
+    print("4. Berdasarkan Tanggal (Terdekat)")
+    try:
+        p = int(input("Pilih [1-4]: "))
+
+        if p == 1:
+            data.sort(key=lambda x: x[0].lower())
+        elif p == 2:
+            data.sort(key=lambda x: x[1].lower())
+        elif p == 3:
+            data.sort(key=lambda x: x[2])
+        elif p == 4:
+            data.sort(key=lambda x: x[3])
+        else:
+            print("Pilihan tidak valid!\n")
+            return
+
+        print(">> Data berhasil diurutkan!\n")
+        read(data)
+
+    except:
+        print("Input harus angka!\n")
+
+
+# =====================================
+#              MENU UTAMA
+# =====================================
+
+def menu():
+    print("=== Aplikasi Pemesanan Tiket Pesawat ===")
+    print("1. Tambah Pemesanan")
+    print("2. Lihat Pemesanan")
+    print("3. Edit Pemesanan")
+    print("4. Hapus Pemesanan")
+    print("5. Cari Nama/Tujuan")
+    print("6. Urutkan Data")
+    print("7. Keluar")
+
+    try:
+        return int(input("Masukkan pilihan [1-7]: "))
+    except:
+        return 0
+
+
+# =====================================
+#            PROGRAM UTAMA
+# =====================================
+
+data = []
+pilihan = 0
+
+while pilihan != 7:
+    pilihan = menu()
+
+    if pilihan == 1:
+        create(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 2:
+        read(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 3:
+        update(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 4:
+        delete(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 5:
+        search(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 6:
+        sortData(data)
+        input("ENTER untuk lanjut...")
+    elif pilihan == 7:
+        print("Terima kasih!\n")
+    else:
+        print("Pilihan tidak valid!\n")
